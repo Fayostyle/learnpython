@@ -47,3 +47,29 @@ def log2(text):
         return wrapper2
     return decorator2
 
+
+###############################
+# 装饰器是普通的方法
+def my_decorator(func):
+    print ("I am a ordinary function")
+    def wrapper():
+        print ("I am function returned by the decorator")
+        func()
+    return wrapper
+
+# 所以，你可以不通过@调用它
+
+def lazy_function():
+    print ("zzzzzzzz")
+
+decorated_function = my_decorator(lazy_function)
+#outputs: I am a ordinary function
+
+# It outputs "I am a ordinary function", because that's just what you do:
+
+# 调用一个函数，没有什么特别
+@my_decorator
+def lazy_function():
+    print ("zzzzzzzz")
+
+#outputs: I am a ordinary function
