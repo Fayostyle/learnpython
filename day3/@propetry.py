@@ -62,5 +62,5 @@ class Screen(object):
 s = Screen()
 s.width = 1024
 s.height = 768
-print(s.resolut
+print(s.resolut)
 assert s.resolution == 786432, '1024 * 768 = %d ?' % s.resolution
